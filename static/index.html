@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-a11y="true"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+</head>
+
+<body>
+    <h2><u>T: MongoDB - CRUD (Create, Read, Update, Delete)</u></h2>
+    <div class="container">
+        <div class="form">
+            <input type="text" name="login" id="login" placeholder="login">
+            <input type="password" name="passwd" id="passwd" placeholder="password">
+            <button id="add">
+                <i class="fas fa-plus"></i>
+                dodaj usera
+            </button>
+            <button id="refresh">
+                <i class="fas fa-redo"></i>
+                odśwież userów
+            </button>
+        </div>
+        <div class="display">
+            <select name="users" id="users"></select>
+            <button id="delete">
+                <i class="fas fa-trash-alt"></i>
+                usuń wybranego usera
+            </button>
+            <button id="update">
+                <i class="fas fa-edit"></i>
+                zaktualizuj hasło usera
+            </button>
+            <div class="usersJSON">
+
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    function add() {
+        console.log("add")
+        let login = document.getElementById("login").value;
+        let password = document.getElementById("passwd").value;
+        const body = JSON.stringify({
+            login: login,
+            password: password
+        }) // body czyli przesyłane na serwer dane
+
+        const headers = { "Content-Type": "application/json" } // nagłowek czyli typ danych
+
+        fetch("/add", { method: "post", body, headers }) // fetch
+            .then(response => response.json())
+            .then(
+                data => console.log(data) // dane odpowiedzi z serwera
+            )
+
+    }
+    document.getElementById("add").addEventListener("click", function () {
+        add();
+    })
+</script>
+
+</html>
