@@ -92,6 +92,7 @@ app.get("/delete/:id", (req, res) => {
     }
     data = data.filter(deleteFile)
     console.log(data)
+    if(data.length == 0) counter=0
     res.redirect("/filemanager")
 })
 
