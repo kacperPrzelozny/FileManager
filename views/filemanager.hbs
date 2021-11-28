@@ -1,0 +1,32 @@
+<aside>
+    filemanager
+    <a href="/reset" class="deleteAll">
+        <u>USUŃ DANE O PLIKACH Z TABLICY</u>
+    </a>
+</aside>
+<div class="filesTable">
+    <table>
+        <thead>
+            <th>id</th>
+            <th>obraz</th>
+            <th>name</th>
+            <th>size</th>
+            <th>type</th>
+            <th>-</th>
+            <th>-</th>
+            <th>-</th>
+        </thead>
+        {{#each data}}
+            <tr>
+                <td>{{id}}</td>
+                <td><img src="gfx/{{icon}}" width="32px"></td>
+                <td>{{name}}</td>
+                <td>{{size}}</td>
+                <td>{{type}}</td>
+                <td><form method="get" action="/delete/{{id}}"><input type="submit" value="DELETE"/></form></td>
+                <td><form method="get" action="/info/{{id}}"><input type="submit" value="INFO"/></form></td>
+                <td><form method="get" action="/download/{{id}}"><input type="submit" value="DOWNLOAD"/></form></td>
+            </tr>
+        {{/each}}
+    </table>
+</div>

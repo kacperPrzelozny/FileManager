@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>File Manager</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans Mono', monospace;
+        }
+        body{
+            height: 100vh;
+        }
+        header {
+            width: 100%;
+            background-color:darkblue;
+            color: white;
+            margin: 0;
+            height: 20vh;
+            align-items: center;
+            display:inline-flex;
+        }
+        a{
+            color: white;
+            margin: 0 10px;
+        }
+        .deleteAll{
+            color: gray;
+            margin-top: 10px;
+        }
+        main{
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            display: inline-flex;
+            flex-direction: row;
+        }
+        aside{
+            width: 20%;
+            height: 100%;
+            background-color:lightgray;
+            color: gray;
+            text-align: center;
+            display: inline-flex;
+            flex-direction: column;
+        }
+        .uploadForm{
+            padding: 50px;
+        }
+        input[type="submit"]{
+            width: 100px;
+        }
+        table{
+            width: 100%;
+            border-spacing:0px;
+            table-layout: fixed;
+            border-collapse: collapse;
+        }
+        .filesTable{
+            width: 100%;
+        }
+        thead tr{
+            background-color: #6495ED;
+            margin: 0;
+            padding: 0;
+            height: 50px;
+            color: white;
+            font-weight: normal;
+        }
+        tr{
+            height: 50px;
+        }
+        td{
+            color: darkblue;
+            font-weight: bold;
+            word-break: break-word;
+        }
+        td input{
+            color: gray;
+            background-color: white;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration:underline;
+            display: inline-block;
+        }
+        .property{
+            text-align: left;
+            padding: 20px;
+        }
+        .name{
+            color: darkblue;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .value{
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="/upload"><u>UPLOAD</u></a>
+        <a href="/filemanager"><u>FILEMANAGER</u></a>
+        <a href="/info"><u>INFO</u></a>
+    </header>
+    <main>
+        {{{body}}}    
+    </main>
+</body>
+
+</html>
